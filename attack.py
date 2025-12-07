@@ -11,6 +11,7 @@ from utility import get_attack_record, judge_exist_data
 
 def attack_sgd(target_idx=0, batch_size=64, ic_type='midrange', region_type='var',
                amount=8, scaling_factor=100000):
+    torch.set_default_dtype(torch.float64)
     dataset_train, dataset_test, loader_train, loader_test = get_cifar10(batch_size=batch_size)
     # model = ResNet20()
     # model = AlexNet()
@@ -54,6 +55,7 @@ def attack_sgd(target_idx=0, batch_size=64, ic_type='midrange', region_type='var
 
 def attack_avg(target_idx=0, epoch=10, batch_size=64, ic_type='midrange', region_type='var',
                amount=8, scaling_factor=100000):
+    torch.set_default_dtype(torch.float64)
     dataset_train, dataset_test, loader_train, loader_test = get_cifar10(batch_size=batch_size)
     model = ResNet20()
     # model = AlexNet()
@@ -143,3 +145,4 @@ if __name__ == "__main__":
     # test_xs = torch.randn(1000, 3, 3, 3)
     # test_xs = ic * test_xs
     # print(f"test_xs = {torch.sum(test_xs, dim=(1, 2, 3))}")
+
