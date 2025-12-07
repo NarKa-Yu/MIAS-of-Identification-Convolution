@@ -1,5 +1,9 @@
 ## MIAs of identification convolution
 
+Please note: 
+1. This experiment does not include downloaded datasets. Please set up an additional folder 'dataset' to place the corresponding dataset and manually modify the dataset call.
+2. Please manually modify the selection of models and datasets.
+
 - Requirement:
   - python3.8
   - torch
